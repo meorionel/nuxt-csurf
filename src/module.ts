@@ -14,7 +14,8 @@ const defaultOptions: ModuleOptions = {
     sameSite: 'strict'
   },
   headerName: 'csrf-token',
-  methodsToProtect: ['POST', 'PUT', 'PATCH']
+  methodsToProtect: ['POST', 'PUT', 'PATCH'],
+  excludedUrls: []
 }
 
 export default defineNuxtModule<ModuleOptions>({

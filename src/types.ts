@@ -24,4 +24,5 @@ export interface ModuleOptions {
   addCsrfTokenToEventCtx?: boolean // to run useCsrfFetch on server
   enabled?: boolean // disabled module server middleware/plugin when `enabled` is set to `false` (you will still have access to `useCsrf`/`useCsrfFetch` client composables)
   headerName?: string
+  excludedUrls?: Array<string | RegExp> // array of excluded urls (regex or string)
 }

@@ -5,11 +5,6 @@ export default defineNuxtConfig({
   modules: [
     module
   ],
-  routeRules: {
-    '/api/nocsrf': {
-      csurf: false
-    }
-  },
   nitro: {
     prerender: { routes: ['/'] }
   },

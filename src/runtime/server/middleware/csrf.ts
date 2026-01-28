@@ -11,6 +11,9 @@ export default defineEventHandler(async (event) => {
   if (csurf === false || csurf?.enabled === false) return // csrf protection disabled for this route
 
   const csrfConfig = defuReplaceArray(csurf, baseConfig)
+  const excludedUrls = csrfConfig.excludedUrls ?? []
+  if (excludedUrls.some(url => url instanceof RegExp ? url.test(event.path) : event.path.startsWith(url))) return
+
   const method = event.node.req.method ?? ''
   const methodsToProtect = csrfConfig.methodsToProtect ?? []
   if (!methodsToProtect.includes(method)) return

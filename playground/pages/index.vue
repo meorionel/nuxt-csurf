@@ -18,6 +18,9 @@
     <button @click="testFetch(true, '/error')">
       POST /error (throw an error one time in two)
     </button>
+    <button @click="testFetch(false, '/public')">
+      POST /public (excluded url)
+    </button>
     <br>
     <br>
     <pre
